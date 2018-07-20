@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>Notification 通知</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../../lib/elementui/theme-chalk/index.css">
+</head>
+<body>
+<div id="app">
+    <!--https://htmlpreview.github.io/?https://github.com/yuleGH/hello-world/blob/master/elementNotify.html-->
+    每个弹出框都是独立的，可多次弹出，并且可以自定义html
+    <br/>
+    <el-button
+            plain
+            @click="open">
+        可自动关闭
+    </el-button>
+    <el-button
+            plain
+            @click="open2">
+        不会自动关闭
+    </el-button>
+    <el-button
+            plain
+            @click="closeAll">
+        关闭所有的弹出框
+    </el-button>
+</div>
+<!-- 引入组件库 -->
+<script type="text/javascript" src="../../lib/vue.js"></script>
+<script src="../../lib/elementui/index.js"></script>
+
+<script type="text/javascript">
+
+    new Vue({
+        el: "#app",
+        data: {
+            dialogArr : []
+        },
+        methods: {
+            clickA(){
+                console.log(this);
+                alert("处理点击标签");
+            },
+            clickBtn(){
+                alert("处理点击按钮");
+            },
+            closeAll(){
+                for(var i = 0; i < this.dialogArr.length; i++){
+                    this.dialogArr[i].close();
+                }
+            },
+            open() {
+                this.dialogArr.push(this.$notify.info({
+                    title: '提示',
+                    message: '这是一条会自动关闭的消息'
+                }));
+            },
+            open2() {
+                const h = this.$createElement;
+                this.dialogArr.push(this.$notify({
+                    title: '标题名称',
+                    message: h('p', null, [
+                        h('span', null, '内容可以是 '),
+                        h('a', {
+                            on:{
+                                click:this.clickA
+                            }
+                        }, "可点击的标签"),
+                        h('button', {
+                            on:{
+                                click:this.clickBtn
+                            }
+                        }, "按钮")
+                    ]),
+                    duration: 0
+                }));
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>
