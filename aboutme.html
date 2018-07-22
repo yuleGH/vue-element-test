@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>关于yuleGH</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="lib/elementui/theme-chalk/index.css" type="text/css">
+    <style>
+      .abbox { margin: 20px auto; width: 1100px; overflow: hidden; clear: both }
+      .aboutme { background: #FFF; border-radius: 10px; overflow: hidden; width: 300px;margin: auto;}
+      .ab_title { text-align: center; position: relative; margin: 20px; }
+      .ab_title:before { content: ""; width: 25%; height: 2px; background: #000; position: absolute; left: 0; bottom: 8px }
+      .ab_title:after { content: ""; width: 25%; height: 2px; background: #000; position: absolute; right: 0; bottom: 8px }
+      .ab_con { line-height: 30px; padding: 10px; }
+      .ab_con p { background: #f6f6f6; margin: 5px 0; padding-left: 10px; border-radius: 5px; text-shadow: rgba(255, 255, 255, 0.3) 0px 1px 0px; }
+      .avatar { width: 100px; height: 100px; overflow: hidden; border-radius: 50px; margin: auto; }
+      .avatar img { width: 100px; height: 100px }
+    </style>
+</head>
+<body>
+<div id="app">
+  <div class="aboutme">
+    <h2 class="ab_title">关于我</h2>
+    <div class="avatar"><img src="img/me.jpg"></div>
+    <div class="ab_con">
+      <p>职业：java 软件设计师</p>
+      <p>籍贯：中国-重庆</p>
+      <p>邮箱：yule.mail@qq.com</p>
+      <p>博客：<a href="http://www.cnblogs.com/yuxiaole/" target="_blank">不忘初心</a></p>
+      <p>github：<a href="https://github.com/yuleGH" target="_blank">yuleGH</a></p>
+      <p>个人简历：待定...</p>
+    </div>
+  </div>
+</div>
+<!-- 引入组件库 -->
+<script type="text/javascript" src="lib/vue.js"></script>
+<script type="text/javascript" src="lib/elementui/index.js"></script>
+
+<script type="text/javascript">
+    new Vue({
+        el: "#app",
+        data: {
+
+        },
+        methods: {
+
+        }
+    });
+</script>
+
+</body>
+
+</html>
