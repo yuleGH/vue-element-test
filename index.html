@@ -42,8 +42,8 @@
         color: #4b595f;
         width: 200px;
       }
-      .left ul{
-        height: 90%;
+      .left .totalUl{
+        height: 93%;
       }
 
       /* 右边内容区 */
@@ -72,13 +72,13 @@
 
     <el-container>
       <el-aside class="left">
-        <el-menu :default-active="activeIndex">
+        <el-menu :default-active="activeIndex" class="totalUl">
           <el-menu-item index="1" @click="open(aboutMeUrl)"><i class="el-icon-service"></i>关于我</el-menu-item>
-          <el-submenu index="firstMenu.id" v-for="firstMenu in menus" :key="firstMenu.id">
+          <el-submenu :index="firstMenu.id" v-for="firstMenu in menus" :key="firstMenu.id">
             <template slot="title"><i :class="firstMenu.iconClass"></i>{{ firstMenu.name }}</template>
             <el-menu-item-group v-for="secondMenu in firstMenu.children" :key="secondMenu.id">
               <template slot="title">{{ secondMenu.name }}</template>
-              <el-menu-item v-for="thirdMenu in secondMenu.children" index="thirdMenu.id" :key="thirdMenu.id" @click="open(thirdMenu.url)">{{ thirdMenu.name }}</el-menu-item>
+              <el-menu-item v-for="thirdMenu in secondMenu.children" :index="thirdMenu.id" :key="thirdMenu.id" @click="open(thirdMenu.url)">{{ thirdMenu.name }}</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
       </el-aside>
@@ -104,15 +104,29 @@
 
           menus : [
             {
-               name: "dialog",
-               id: "dialog",
+              name: "Table",
+              id: "Table",
+              iconClass: "el-icon-tickets",
+              children:[
+                {
+                  name: "自定义列模板",
+                  id: "ZDYLMB",
+                  children: [
+                    {name: "加checkbox", id: "zdylmb-demo1", url: "table/defineTemplateSelf.html"}
+                  ]
+                }
+              ]
+            },
+            {
+               name: "Dialog",
+               id: "Dialog",
                iconClass: "el-icon-message",
                children:[
                  {
                    name: "Notification 通知",
                    id: "notification",
                    children: [
-                     {name: "demo1", id: "noti-demo1", url: "dialog/notification/notification.html"}
+                     {name: "使用vNode", id: "noti-demo1", url: "dialog/notification/notification.html"}
                    ]
                  }
                ]

@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <title>自定义列模板</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../lib/elementui/theme-chalk/index.css" type="text/css">
+</head>
+<body>
+<div id="app">
+
+  <p>所有的打印数据，均在Console里。
+    表格上是否有钱这列是el-checkbox，绑定了v-model</p>
+
+  <el-table
+   :data="tableData"
+   style="width: 100%">
+   <el-table-column
+     label="出生日期"
+     width="180">
+     <template slot-scope="scope">
+       <i class="el-icon-time"></i>
+       <span style="margin-left: 10px">{{ scope.row.date }}</span>
+     </template>
+   </el-table-column>
+   <el-table-column
+     label="姓名"
+     width="180">
+     <template slot-scope="scope">
+       <el-popover trigger="hover" placement="top">
+         <p>姓名: {{ scope.row.name }}</p>
+         <p>住址: {{ scope.row.address }}</p>
+         <div slot="reference" class="name-wrapper">
+           <el-tag size="medium">{{ scope.row.name }}</el-tag>
+         </div>
+       </el-popover>
+     </template>
+   </el-table-column>
+
+   <el-table-column
+     label="是否有钱"
+     width="180">
+     <template slot-scope="scope">
+       <el-checkbox v-model="scope.row.isRich">是</el-checkbox>
+     </template>
+   </el-table-column>
+
+   <el-table-column label="操作">
+     <template slot-scope="scope">
+       <el-button
+         size="mini"
+         @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+       <el-button
+         size="mini"
+         type="danger"
+         @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+     </template>
+   </el-table-column>
+ </el-table>
+
+ <br/>
+ <el-button type="primary" plain @click="getTabelData">获取表格数据</el-button>
+</div>
+<!-- 引入组件库 -->
+<script type="text/javascript" src="../lib/vue.js"></script>
+<script type="text/javascript" src="../lib/elementui/index.js"></script>
+
+<script type="text/javascript">
+
+    new Vue({
+        el: "#app",
+        data: {
+          tableData: [{
+            date: '2000-10-27',
+            name: '余小乐',
+            address: '假装一下00后，但是没钱',
+            isRich : false
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1517 弄',
+            isRich : true
+          }, {
+            date: '2016-05-01',
+            name: '小花',
+            address: '重庆市璧山区',
+            isRich : true
+          }, {
+            date: '1998-05-03',
+            name: '二哈',
+            address: '成都',
+            isRich : false
+          }]
+        },
+        methods: {
+          handleEdit(index, row) {
+            console.log(index, row);
+          },
+          handleDelete(index, row) {
+            console.log(index, row);
+          },
+          getTabelData(){
+            console.log(this.tableData);
+          }
+        }
+    });
+</script>
+
+</body>
+
+</html>
