@@ -5,6 +5,10 @@
     <!-- 引入样式 -->
     <link rel="stylesheet" href="lib/elementui/theme-chalk/index.css" type="text/css">
     <style>
+      body{
+        margin: 0px;
+      }
+
       /* 所有 */
       #app{
         width:100%; height:100%;
@@ -114,6 +118,13 @@
                   children: [
                     {name: "加checkbox", id: "zdylmb-demo1", url: "table/defineTemplateSelf.html"}
                   ]
+                },
+                {
+                  name: "多选表格",
+                  id: "DXBG",
+                  children: [
+                    {name: "反正官网上没有这个demo", id: "DXBG-demo1", url: "table/checkbox1.html"}
+                  ]
                 }
               ]
             },
@@ -127,6 +138,19 @@
                    id: "notification",
                    children: [
                      {name: "使用vNode", id: "noti-demo1", url: "dialog/notification/notification.html"}
+                   ]
+                 }
+               ]
+            },
+            {
+               name: "其他",
+               id: "other",
+               children:[
+                 {
+                   name: "跳转页面",
+                   id: "other-skip-page",
+                   children: [
+                     {name: "在当页来回跳转", id: "other-skip-cur", url: "other/skipPage.html"}
                    ]
                  }
                ]

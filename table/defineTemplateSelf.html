@@ -8,7 +8,7 @@
 <body>
 <div id="app">
 
-  <p>所有的打印数据，均在Console里。
+  <p style="color: red;">所有的打印数据，均在打印区里。
     表格上是否有钱这列是el-checkbox，绑定了v-model</p>
 
   <el-table
@@ -59,7 +59,12 @@
 
  <br/>
  <el-button type="primary" plain @click="getTabelData">获取表格数据</el-button>
+ <div style="margin-top: 20px">
+   <span>打印区</span>
+   <el-input type="textarea" v-model="printStr"></el-input>
+ </div>
 </div>
+
 <!-- 引入组件库 -->
 <script type="text/javascript" src="../lib/vue.js"></script>
 <script type="text/javascript" src="../lib/elementui/index.js"></script>
@@ -69,6 +74,8 @@
     new Vue({
         el: "#app",
         data: {
+          printStr : "",
+
           tableData: [{
             date: '2000-10-27',
             name: '余小乐',
@@ -93,13 +100,13 @@
         },
         methods: {
           handleEdit(index, row) {
-            console.log(index, row);
+            this.printStr = "点击编辑；index="+index+"；row="+JSON.stringify(row);
           },
           handleDelete(index, row) {
-            console.log(index, row);
+            this.printStr = "点击删除；index="+index+"；row="+JSON.stringify(row);
           },
           getTabelData(){
-            console.log(this.tableData);
+            this.printStr = "表格数据：" + JSON.stringify(this.tableData);
           }
         }
     });
