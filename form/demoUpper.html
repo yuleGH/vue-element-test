@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>测试</title>
+</head>
+<body>
+<div id="app">
+
+    <p style="color: red;">两种小写转大写的方式</p>
+
+    <input id="val1" v-model="value1">
+    <br/>
+    显示小写转大写 ： {{ value1 | upper}}
+
+    <br/><br/>
+    输入框中直接输入小写转大写：
+    <input v-model="value2Computed">
+</div>
+<!-- 引入组件库 -->
+<script type="text/javascript" src="../lib/vue.js"></script>
+
+<script type="text/javascript">
+
+    new Vue({
+        el: "#app",
+        data: {
+            value1: "",
+            value2: ""
+        },
+        computed : {
+            value2Computed : {
+                get: function(){
+                    return this.value2;
+                },
+                set : function(val){
+                    this.value2 = val.toUpperCase();
+                }
+            }
+        },
+        components : {
+
+        },
+        filters: {
+            upper: function (value) {
+                if (!value) return '';
+                value = value.toString();
+                return value.toUpperCase();
+            }
+        },
+        methods: {
+            clickBtn: function () {
+                console.log(this.value1);
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>

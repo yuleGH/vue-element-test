@@ -113,10 +113,24 @@
                iconClass: "el-icon-time",
                children:[
                  {
-                   name: " DatePicker 日期选择器",
+                   name: "DatePicker 日期选择器",
                    id: "DatePicker",
                    children: [
                      {name: "年月日时分", id: "DatePicker-demo1", url: "date/demoElDatePicker.html"}
+                   ]
+                 }
+               ]
+            },
+            {
+               name: "Form",
+               id: "form",
+               iconClass: "el-icon-edit-outline",
+               children:[
+                 {
+                   name: "Input",
+                   id: "input",
+                   children: [
+                     {name: "小写转大写", id: "input-demo1", url: "form/demoUpper.html"}
                    ]
                  }
                ]
@@ -157,6 +171,20 @@
                ]
             },
             {
+               name: "组件",
+               id: "component",
+               iconClass: "el-icon-news",
+               children:[
+                 {
+                   name: "数据绑定",
+                   id: "databind",
+                   children: [
+                     {name: "双向绑定", id: "databind-demo1", url: "component/demoDataBindTwoWay.html"}
+                   ]
+                 }
+               ]
+            },
+            {
                name: "其他",
                id: "other",
                children:[
@@ -165,6 +193,20 @@
                    id: "other-skip-page",
                    children: [
                      {name: "在当页来回跳转", id: "other-skip-cur", url: "other/skipPage.html"}
+                   ]
+                 },
+                 {
+                   name: "滚动条",
+                   id: "other-scroll",
+                   children: [
+                     {name: "固定在可视区域", id: "other-scroll-demo1", url: "other/demoScroll.html"}
+                   ]
+                 },
+                 {
+                   name: "复制",
+                   id: "other-copy",
+                   children: [
+                     {name: "复制内容到粘贴板", id: "other-copy-demo1", url: "other/copyValue.html"}
                    ]
                  }
                ]
