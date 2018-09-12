@@ -34,6 +34,9 @@
         width: 20px;
         height: 20px;
       }
+      .author-github{
+        cursor: pointer;
+      }
 
       /* 内容区 */
       .container{
@@ -70,8 +73,8 @@
         <span>余小乐的个人demo网站</span>
       </div>
       <div @click="openGitHub" class="author">
-        <i class="el-icon-location-outline">yuleGH</i>
-        <img alt="@yuleGH" class="author-img" src="https://avatars2.githubusercontent.com/u/31040588?s=40&amp;v=4">
+        <i class="el-icon-location-outline author-github">yuleGH</i>
+        <img title="gitHub 主页" alt="@yuleGH" class="author-img author-github" src="https://avatars2.githubusercontent.com/u/31040588?s=40&amp;v=4">
       </div>
     </el-header>
 
