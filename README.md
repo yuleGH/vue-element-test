@@ -1,5 +1,6 @@
 create 2018-07-20 by yule
 # vue-element-test
+## 持续更新中。。。
 这是vue + element ui的第一个项目，基于CDN。为了方便预览，暂时不依赖各种服务器，只是静态 HTML
 
 这里将记录工作中遇到的问题或者 element ui 官网上没有的 demo
