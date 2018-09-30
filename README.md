@@ -10,3 +10,9 @@ create 2018-07-20 by yule
 博客地址：http://www.cnblogs.com/yuxiaole/
 
 喜欢就 star
+
+附：element ui 文件下载地址
+  https://unpkg.com/element-ui@2.4.7/lib/theme-chalk/index.css
+  https://unpkg.com/element-ui@2.4.7/lib/theme-chalk/fonts/element-icons.woff
+  https://unpkg.com/element-ui@2.4.7/lib/theme-chalk/fonts/element-icons.ttf
+  https://unpkg.com/element-ui@2.4.7/lib/index.js
