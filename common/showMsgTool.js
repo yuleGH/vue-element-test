@@ -4,11 +4,11 @@
  */
 var iconConstants = {
     INFO: 'INFO',
-    SUCCESSAUTO: 'SUCCESSAUTO',//自动关闭
     SUCCESS: 'SUCCESS',//有确定按钮，不会自动关闭
     WARNING: 'WARN',
     ERROR: 'ERROR',
     QUESTION: 'QUESTION',
+    SUCCESSAUTO: 'SUCCESSAUTO',//自动关闭
     INFOAUTO: 'INFOAUTO',
     WARNINGAUTO: 'WARNAUTO',
     ERRORAUTO: 'ERRORAUTO'
