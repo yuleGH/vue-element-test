@@ -75,6 +75,9 @@
                       h('a', {
                           on:{
                               click:this.clickA
+                          },
+                          'class': {
+                              't-btn': true //加class
                           }
                       }, "可点击的标签"),
                       h('button', {
@@ -88,7 +91,7 @@
                       }, "按钮")
                   ]),
                   position: 'bottom-right',
-                  duration: 0
+                  duration: 0 //显示时间, 毫秒。设为 0 则不会自动关闭
               }));
             }
         }
